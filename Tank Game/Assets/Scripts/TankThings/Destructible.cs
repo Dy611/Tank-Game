@@ -12,6 +12,10 @@ namespace TankGame
 
         public DestructibleProfile dProfile;
 
+        public bool respawn;
+        [HideInInspector]
+        public bool respawning;
+
         public float respawnTime { get; private set; }
         public Health health { get; private set; }
 
@@ -25,6 +29,7 @@ namespace TankGame
 
         private void OnEnable()
         {
+            respawning = false;
             if (randomize || dProfile == null)
             {
                 dProfile = Randomizer.GetDestructibleProfile();

@@ -8,7 +8,7 @@ namespace TankGame
     {
         private static readonly List<Destructible> destructibles = new List<Destructible>();
 
-        private void Awake()
+        private void Start()
         {
             foreach(Destructible destructible in Resources.FindObjectsOfTypeAll<Destructible>())
             {
@@ -30,6 +30,15 @@ namespace TankGame
                 {
                     StartCoroutine(ResetObject(destructibles[i].gameObject, destructibles[i].respawnTime));
                     break;
+                }
+            }
+
+            foreach(Destructible destructible in destructibles)
+            {
+                if(!destructible.gameObject.activeInHierarchy && destructible.respawn && !destructible.respawning)
+                {
+                    destructible.respawning = true;
+                    StartCoroutine(ResetObject(destructible.gameObject, destructible.respawnTime));
                 }
             }
         }

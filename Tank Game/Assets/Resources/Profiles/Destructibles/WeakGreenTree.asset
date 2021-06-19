@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WeakGreenTree
   m_EditorClassIdentifier: 
   health: 3
-  respawnTime: 15
+  respawnTime: 2
   visual: {fileID: 21300000, guid: d72e02ce1c3366142add364290f22530, type: 3}

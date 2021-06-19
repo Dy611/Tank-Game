@@ -12,7 +12,7 @@ namespace TankGame
         private ModeProfile modeProfile;
 
         [SerializeField]
-        private TMP_Text score1, score2, winningText;
+        private TMP_Text score1, score2, winningScoreText, winningText;
 
         [SerializeField]
         private GameObject winningButton;
@@ -41,7 +41,7 @@ namespace TankGame
 
             winningScore = modeProfile.winningScore;
             respawnTime = modeProfile.respawnDelay;
-            winningText.text = "Winning Score: " + winningScore;
+            winningScoreText.text = "Winning Score: " + winningScore;
 
             if (modeProfile.randomTanks)
                 RandomizeTanks();
