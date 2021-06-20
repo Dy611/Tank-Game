@@ -54,8 +54,8 @@ namespace TankGame.Managers
             GameObject[] playersGO = GameObject.FindGameObjectsWithTag("Player");
             for (int i = 0; i < playersGO.Length; i++)
             {
-                players.Add("Player" + (i + 1), playersGO[i]);
-                players["Player" + (i + 1)].GetComponent<Health>().OnDeath += UpdateScore;
+                players.Add(playersGO[i].name, playersGO[i]);
+                players[playersGO[i].name].GetComponent<Health>().OnDeath += UpdateScore;
             }
 
             //Creates A List Of The Player's Tanks For Potential Randomizing
@@ -98,15 +98,16 @@ namespace TankGame.Managers
         /// </summary>
         private void InitializeTanks()
         {
+            Debug.Log("HI");
             //Player 1
-            players["Player1"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player1Tank];
-            players["Player1"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player1Weapon];
-            players["Player1"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player1Projectile];
+            players["Player 1"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player1Tank];
+            players["Player 1"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player1Weapon];
+            players["Player 1"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player1Projectile];
 
             //Player 2
-            players["Player2"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player2Tank];
-            players["Player2"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player2Weapon];
-            players["Player2"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player2Projectile];
+            players["Player 2"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player2Tank];
+            players["Player 2"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player2Weapon];
+            players["Player 2"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player2Projectile];
         }
         #endregion Initialization
 
@@ -133,7 +134,7 @@ namespace TankGame.Managers
         #region Rules Control
         private void UpdateScore()
         {
-            if (players["Player1"].activeInHierarchy)
+            if (players["Player 1"].activeInHierarchy)
                 p1score++;
             else
                 p2score++;
@@ -151,44 +152,44 @@ namespace TankGame.Managers
         {
             OnGameOver?.Invoke();
             Time.timeScale = 0;
-            if (players["Player1"].activeInHierarchy)
-                winningText.text = players["Player1"].name + " Wins!";
+            if (players["Player 1"].activeInHierarchy)
+                winningText.text = players["Player 1"].name + " Wins!";
             else
-                winningText.text = players["Player2"].name + " Wins!";
+                winningText.text = players["Player 2"].name + " Wins!";
             winningButton.SetActive(true);
         }
 
         public void SpawnPlayer()
         {
-            if (players["Player1"].activeInHierarchy)
+            if (players["Player 1"].activeInHierarchy)
             {
                 int highestIndex = 0;
-                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player1"].transform.position);
+                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player 1"].transform.position);
                 for (int i = 0; i < spawnPositions.Length; i++)
                 {
-                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player1"].transform.position);
+                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player 1"].transform.position);
                     if (currDist > highestDist)
                     {
                         highestDist = currDist;
                         highestIndex = i;
                     }
                 }
-                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player2"]));
+                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player 2"]));
             }
-            else if (players["Player2"].activeInHierarchy)
+            else if (players["Player 2"].activeInHierarchy)
             {
                 int highestIndex = 0;
-                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player2"].transform.position);
+                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player 2"].transform.position);
                 for (int i = 0; i < spawnPositions.Length; i++)
                 {
-                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player2"].transform.position);
+                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player 2"].transform.position);
                     if (currDist > highestDist)
                     {
                         highestDist = currDist;
                         highestIndex = i;
                     }
                 }
-                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player1"]));
+                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player 1"]));
             }
         }
 

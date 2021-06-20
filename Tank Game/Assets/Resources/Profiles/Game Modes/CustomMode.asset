@@ -19,8 +19,8 @@ MonoBehaviour:
   randomProjectiles: 1
   randomDestructibles: 1
   player1Tank: 3
-  player1Weapon: 5
-  player1Projectile: 1
-  player2Tank: 6
-  player2Weapon: 1
+  player1Weapon: 2
+  player1Projectile: 5
+  player2Tank: 5
+  player2Weapon: 7
   player2Projectile: 8

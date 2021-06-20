@@ -9,7 +9,7 @@ namespace TankGame
     public class Weapon : MonoBehaviour, IRandomizeAble
     {
         public bool randomized;
-        public bool randomizeProj { private get; set; }
+        public bool randomizeProj;
 
         public WeaponProfile wProfile;
         public ProjectileProfile pProfile;
@@ -24,6 +24,12 @@ namespace TankGame
 
         protected virtual void OnEnable()
         {
+            StartCoroutine(LateOnEnable());
+        }
+
+        private IEnumerator LateOnEnable()
+        {
+            yield return new WaitForEndOfFrame();
             InitializeWeapon();
         }
 
@@ -39,7 +45,7 @@ namespace TankGame
 
             if (randomizeProj)
                 pProfile = ProfilesManager.GetProfile(ProfilesManager.projectileProfiles);
-            else
+            else if(pProfile == null)
                 pProfile = wProfile.pProfile;
 
             barrel.sprite = wProfile.barrelGraphic;
