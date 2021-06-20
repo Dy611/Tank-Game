@@ -116,34 +116,27 @@ namespace TankGame
 
         public void SpawnPlayer()
         {
-            List<float> distances = new List<float>();
-
             for (int i = 0; i < players.Length; i++)
             {
-
                 if (players[i].activeInHierarchy)
                 {
-
-                    for (int o = 0; o < spawnPositions.Length; o++)
-                    {
-
-                        distances.Add(Vector2.Distance(spawnPositions[o].transform.position, players[i].transform.position));
-                    }
-
                     int highestIndex = 0;
-                    for (int p = 0; p < distances.Count; p++)
+                    float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players[i].transform.position);
+                    for (int j = 0; j < spawnPositions.Length; j++)
                     {
-
-                        if (distances[p] > distances[highestIndex])
-                            highestIndex = p;
+                        float currDist = Vector2.Distance(spawnPositions[j].transform.position, players[i].transform.position);
+                        if (currDist > highestDist)
+                        {
+                            highestDist = currDist;
+                            highestIndex = j;
+                        }
                     }
 
-
-                    for (int a = 0; a < players.Length; a++)
+                    for (int k = 0; k < players.Length; k++)
                     {
-                        if (!players[a].activeInHierarchy)
+                        if (!players[k].activeInHierarchy)
                         {
-                            StartCoroutine(DelaySpawn(respawnTime, highestIndex, a));
+                            StartCoroutine(DelaySpawn(respawnTime, highestIndex, k));
                             break;
                         }
                     }

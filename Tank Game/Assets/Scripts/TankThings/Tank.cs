@@ -21,6 +21,9 @@ namespace TankGame
         private TankProfile tProfile;
 
         [SerializeField]
+        private InputProfile iProfile;
+
+        [SerializeField]
         private Weapon weapon;
 
         [SerializeField]
@@ -99,8 +102,8 @@ namespace TankGame
 
         private void HandleInput()
         {
-            direction.x = Input.GetAxisRaw("Horizontal");
-            direction.y = Input.GetAxisRaw("Vertical");
+            direction.x = Input.GetAxisRaw(iProfile.horizontalAxis);
+            direction.y = Input.GetAxisRaw(iProfile.verticalAxis);
 
             if (forward)
             {
@@ -111,7 +114,7 @@ namespace TankGame
                 direction.y = Mathf.Clamp(direction.y, 0, 1);
             }
 
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton(iProfile.shootButton))
                 weapon.Shoot();
         }
 

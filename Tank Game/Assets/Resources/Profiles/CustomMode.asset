@@ -18,7 +18,7 @@ MonoBehaviour:
   randomWeapons: 0
   randomProjectiles: 0
   randomDestructibles: 0
-  player1Tank: 0
+  player1Tank: 1
   player1Weapon: 0
   player1Projectile: 0
   player2Tank: 0

@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: HorizontalLeft
+  m_VerticalAxis: VerticalLeft
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &26745993
 CircleCollider2D:
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &123462339
 CircleCollider2D:
@@ -950,7 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &195153523
 CircleCollider2D:
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &256253428
 CircleCollider2D:
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &466871780
 CircleCollider2D:
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &485714138
 CircleCollider2D:
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &485750680
 CircleCollider2D:
@@ -2069,6 +2069,7 @@ MonoBehaviour:
   randomize: 1
   gameManager: {fileID: 694976468}
   tProfile: {fileID: 11400000, guid: efc6eadd3ebb2eb4a930f5fc0641eb26, type: 2}
+  iProfile: {fileID: 11400000, guid: f6d1cae371a8e304a9cb46f227c4966b, type: 2}
   weapon: {fileID: 1279602516}
   healthBar: {fileID: 63136305}
 --- !u!1 &534739563
@@ -5491,7 +5492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &711289531
 CircleCollider2D:
@@ -5636,7 +5637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &785015532
 CircleCollider2D:
@@ -5767,7 +5768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &923841235
 CircleCollider2D:
@@ -5964,8 +5965,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6174,7 +6175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1134434844
 CircleCollider2D:
@@ -6380,7 +6381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1223655278
 CircleCollider2D:
@@ -6511,7 +6512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1240150372
 CircleCollider2D:
@@ -6642,7 +6643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1275410928
 CircleCollider2D:
@@ -14962,7 +14963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!1 &1469071721
 GameObject:
@@ -15236,6 +15237,7 @@ MonoBehaviour:
   randomize: 0
   gameManager: {fileID: 694976468}
   tProfile: {fileID: 11400000, guid: efc6eadd3ebb2eb4a930f5fc0641eb26, type: 2}
+  iProfile: {fileID: 11400000, guid: dca5b2fc89181004aad186719fee4d47, type: 2}
   weapon: {fileID: 52368703}
   healthBar: {fileID: 1139342854}
 --- !u!4 &1484517582
@@ -15302,7 +15304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1489592589
 CircleCollider2D:
@@ -15742,7 +15744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1757280133
 CircleCollider2D:
@@ -15873,7 +15875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1759543188
 CircleCollider2D:
@@ -16161,8 +16163,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -16379,7 +16381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1854533747
 CircleCollider2D:
@@ -16510,7 +16512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1867836517
 CircleCollider2D:
@@ -16789,7 +16791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1900544729
 CircleCollider2D:
@@ -17003,7 +17005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &1962008989
 CircleCollider2D:
@@ -17134,7 +17136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &2054134610
 CircleCollider2D:
@@ -17265,7 +17267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
-  respawn: 0
+  respawn: 1
   respawning: 0
 --- !u!58 &2077063626
 CircleCollider2D:
