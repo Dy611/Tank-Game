@@ -63,8 +63,8 @@ namespace TankGame
             rb.angularVelocity = 0;
             sRend.sprite = pProfile.hitGraphic;
             yield return new WaitForSeconds(0.1f);
-            gameObject.SetActive(false);
             canUse = true;
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1,10 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 using TMPro;
 
-//Resolution Resets If Fullscreen is False On Exit
 namespace TankGame.Menus
 {
     /// <summary>

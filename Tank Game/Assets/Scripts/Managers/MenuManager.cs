@@ -40,4 +40,14 @@ public class MenuManager : MonoBehaviour
     {
         MenuFunctions.LoadScene(sceneIndex);
     }
+
+    public void PauseProject()
+    {
+        MenuFunctions.PauseProject();
+    }
+
+    public void ResumeProject()
+    {
+        MenuFunctions.ResumeProject();
+    }
 }

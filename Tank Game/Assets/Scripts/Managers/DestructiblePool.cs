@@ -1,11 +1,14 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace TankGame
+namespace TankGame.Managers
 {
     public class DestructiblePool : MonoBehaviour
     {
+        /// <summary>
+        /// Pooled List Of All Destructibles In The Scene
+        /// </summary>
         private static readonly List<Destructible> destructibles = new List<Destructible>();
 
         private void Start()
