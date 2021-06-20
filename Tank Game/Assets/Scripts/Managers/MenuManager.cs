@@ -5,15 +5,31 @@ using TankGame.Menus;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject pauseMenu;
     public TMP_Dropdown qualityDropdown;
     public TMP_Dropdown resDropdown;
     public Toggle fsToggle;
 
     private void Start()
     {
-        MenuFunctions.PopulateFullscreenToggle(fsToggle);
-        MenuFunctions.PopulateQualityPresetDropdown(qualityDropdown);
-        MenuFunctions.PopulateResolutionDropdown(resDropdown);
+        if (qualityDropdown != null)
+            MenuFunctions.PopulateQualityPresetDropdown(qualityDropdown);
+        if (resDropdown != null)
+            MenuFunctions.PopulateResolutionDropdown(resDropdown);
+        if (fsToggle != null)
+            MenuFunctions.PopulateFullscreenToggle(fsToggle);
+    }
+
+    private void Update()
+    {
+        if(pauseMenu != null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            if(pauseMenu.activeInHierarchy)
+                MenuFunctions.PauseProject();
+            else
+                MenuFunctions.ResumeProject();
+        }
     }
 
     public void CloseProject()

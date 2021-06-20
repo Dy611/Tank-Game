@@ -29,6 +29,12 @@ namespace TankGame.Managers
             }
         }
 
+        //Clears Old References On Scene Change
+        private void OnDisable()
+        {
+            tracks.Clear();
+        }
+
         /// <summary>
         /// Looks For A Usable Track Inside List, Creates A New One If None Are Available
         /// </summary>

@@ -29,6 +29,12 @@ namespace TankGame.Managers
             }
         }
 
+        //Clears Old References On Scene Change
+        private void OnDisable()
+        {
+            projs.Clear();
+        }
+
         /// <summary>
         /// Looks For A Usable Projectile Inside List, Creates A New One If None Are Available
         /// </summary>

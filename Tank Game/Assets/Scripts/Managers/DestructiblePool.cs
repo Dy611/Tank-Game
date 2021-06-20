@@ -25,6 +25,12 @@ namespace TankGame.Managers
             }
         }
 
+        //Clears Old References On Scene Change
+        private void OnDisable()
+        {
+            destructibles.Clear();
+        }
+
         private void RespawnObject()
         {
             for(int i = 0; i < destructibles.Count; i++)

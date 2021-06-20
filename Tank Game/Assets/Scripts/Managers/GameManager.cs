@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using TankGame.Profiles;
+using System; 
 
 namespace TankGame.Managers
 {
@@ -38,6 +39,13 @@ namespace TankGame.Managers
         private void Awake()
         {
             InitializeMode();
+        }
+
+        //Clears Old References On Scene Change
+        private void OnDisable()
+        {
+            players.Clear(); 
+            Array.Clear(spawnPositions, 0, spawnPositions.Length);
         }
 
         private void InitializeMode()
@@ -134,16 +142,19 @@ namespace TankGame.Managers
             score2.text = "Player 2: " + p2score;
 
             if (p1score >= winningScore)
-                GameWon(1);
+                GameWon();
             else if (p2score >= winningScore)
-                GameWon(2);
+                GameWon();
         }
 
-        private void GameWon(int winningPlayer)
+        private void GameWon()
         {
             OnGameOver?.Invoke();
             Time.timeScale = 0;
-            winningText.text = "Player " + winningPlayer + " Wins!";
+            if (players["Player1"].activeInHierarchy)
+                winningText.text = players["Player1"].name + " Wins!";
+            else
+                winningText.text = players["Player2"].name + " Wins!";
             winningButton.SetActive(true);
         }
 

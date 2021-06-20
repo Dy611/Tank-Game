@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2939ea280dc600c43afae17f87b678fc, type: 3}
+  m_Name: DarkLarge
+  m_EditorClassIdentifier: 
+  health: 10
+  speed: 3
+  turnSpeed: 15
+  trackDelay: 0.5
+  tankGraphic: {fileID: 21300000, guid: 05d78fe2870eadc4eb5bdb340494ed1d, type: 3}
+  trackGraphic: {fileID: 21300000, guid: 7668e75e4bb18b641992520f05a3b793, type: 3}
