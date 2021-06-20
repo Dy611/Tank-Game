@@ -39,13 +39,13 @@ namespace TankGame
 
         public void IncrementWinningScore()
         {
-            modeProfile.winningScore = Mathf.Clamp(++modeProfile.winningScore, 0, 20);
+            modeProfile.winningScore = Mathf.Clamp(++modeProfile.winningScore, 1, 20);
             UpdateText(modeProfile.winningScore, winningScoreText);
         }
 
         public void DecrementWinningScore()
         {
-            modeProfile.winningScore = Mathf.Clamp(--modeProfile.winningScore, 0, 20);
+            modeProfile.winningScore = Mathf.Clamp(--modeProfile.winningScore, 1, 20);
             UpdateText(modeProfile.winningScore, winningScoreText);
         }
 

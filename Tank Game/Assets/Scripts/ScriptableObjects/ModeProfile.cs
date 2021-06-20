@@ -6,7 +6,7 @@ namespace TankGame.Profiles
     public class ModeProfile : ScriptableObject
     {
         [Header("Main Rules")]
-        [Range(0, 20)]
+        [Range(1, 20)]
         [Tooltip("The Amount Of Points Needed To Win The Match")]
         public int winningScore;
         [Range(0, 10)]
