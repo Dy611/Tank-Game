@@ -62,7 +62,7 @@ namespace TankGame
                 proj.transform.rotation = transform.rotation;
                 canFire = false;
                 shootVFX.gameObject.SetActive(true);
-                StartCoroutine(FireDelay(wProfile.fireRate));
+                StartCoroutine(FireDelay(wProfile.fireDelay));
             }
         }
 

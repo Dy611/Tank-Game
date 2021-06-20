@@ -5,24 +5,16 @@ namespace TankGame.Profiles
     [CreateAssetMenu(menuName = "Tank Game/Create Projectile")]
     public class ProjectileProfile : ScriptableObject
     {
-        /// <summary>
-        /// Damage Projectile Should Deal
-        /// </summary>
+        [Header("Projectile Stats")]
+        [Tooltip("Amount Of Damage Projectile Deals On Impact")]
         public int damage;
-
-        /// <summary>
-        /// Travel Speed Of Projectile
-        /// </summary>
+        [Tooltip("The Speed Of The Projectile While Moving")]
         public float speed;
 
-        /// <summary>
-        /// Visual Of Projectile
-        /// </summary>
+        [Header("Projectile Graphics")]
+        [Tooltip("Visual Of The Projectile While Moving")]
         public Sprite projectileGraphic;
-
-        /// <summary>
-        /// Visual Of Hitting Something
-        /// </summary>
+        [Tooltip("Visual Of The Projectile Hitting Something")]
         public Sprite hitGraphic;
     }
 }

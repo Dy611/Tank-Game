@@ -5,29 +5,20 @@ namespace TankGame.Profiles
     [CreateAssetMenu(menuName = "Tank Game/Create Weapon")]
     public class WeaponProfile : ScriptableObject
     {
-        /// <summary>
-        /// Time Delay Between Shots
-        /// </summary>
-        public float fireRate;
+        [Header("Gun Stats")]
+        [Tooltip("Have The Gun Fire A Random Projectile Every Time It Fires")]
+        public bool randomProjectile;
+        [Tooltip("Time Delay Between Shots")]
+        public float fireDelay;
 
-        /// <summary>
-        /// Visual Of The Barrel
-        /// </summary>
+        [Header("Gun Graphics")]
+        [Tooltip("Visual Of The Weapon Barrel Itself")]
         public Sprite barrelGraphic;
-
-        /// <summary>
-        /// Visual of Shooting
-        /// </summary>
+        [Tooltip("Visual Of The VFX When Firing")]
         public Sprite shotGraphic;
 
-        /// <summary>
-        /// Should Weapon Shoot Random Projectiles
-        /// </summary>
-        public bool randomProjectile;
-
-        /// <summary>
-        /// Default Projectile To Shoot
-        /// </summary>
+        [Header("Projectile To Shoot")]
+        [Tooltip("The Projectile The Weapon Will Fire")]
         public ProjectileProfile pProfile;
     }
 }

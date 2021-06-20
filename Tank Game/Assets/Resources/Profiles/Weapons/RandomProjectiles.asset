@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2994a97b51bcaa4497112659ed406f5, type: 3}
   m_Name: RandomProjectiles
   m_EditorClassIdentifier: 
-  fireRate: 0.2
+  randomProjectile: 1
+  fireDelay: 0.3
   barrelGraphic: {fileID: 21300000, guid: dc517fa628ca05d439fa189bb9a80833, type: 3}
   shotGraphic: {fileID: 21300000, guid: 412f3689dd18524499ea725c4903b1fa, type: 3}
-  randomProjectile: 1
   pProfile: {fileID: 0}

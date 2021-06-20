@@ -5,35 +5,25 @@ namespace TankGame.Profiles
     [CreateAssetMenu(menuName = "Tank Game/Create Tank")]
     public class TankProfile : ScriptableObject
     {
-        /// <summary>
-        /// Health Of Tank
-        /// </summary>
+        [Header("Tank Stats")]
+        [Range(0,50)]
+        [Tooltip("Amount Of Damage Tank Can Take Before Death")]
         public int health;
-
-        /// <summary>
-        /// Speed Of Tank
-        /// </summary>
+        [Range(0, 50)]
+        [Tooltip("Speed Of The Tank Movement")]
         public float speed;
-
-        /// <summary>
-        /// Speed Of Tank's Rotation
-        /// </summary>
+        [Range(0,50)]
+        [Tooltip("Speed The Tank Turns")]
         public float turnSpeed;
-
-        /// <summary>
-        /// Time Between Track Spawns
-        /// </summary>
         [Range(0, 1)]
+        [Tooltip("Time Delay Between Spawning Tracks")]
         public float trackDelay;
 
-        /// <summary>
-        /// Visual Of Tank
-        /// </summary>
+        [Header("Tank Graphics")]
+        [Tooltip("Visual Of The Tank")]
         public Sprite tankGraphic;
 
-        /// <summary>
-        /// Visual Of Tire Tracks
-        /// </summary>
+        [Tooltip("Visual Of The Tracks The Tank Creates")]
         public Sprite trackGraphic;
     }
 }

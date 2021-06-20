@@ -9,28 +9,12 @@ public class MenuManager : MonoBehaviour
     public TMP_Dropdown resDropdown;
     public Toggle fsToggle;
 
-    //Audio Controller START
-    [SerializeField]
-    private Settings settingsProfile;
-
-    public static Settings settings;
-
-    private void Awake()
-    {
-        if (settingsProfile != null)
-            settings = settingsProfile;
-    }
-
     private void Start()
     {
         MenuFunctions.PopulateFullscreenToggle(fsToggle);
         MenuFunctions.PopulateQualityPresetDropdown(qualityDropdown);
         MenuFunctions.PopulateResolutionDropdown(resDropdown);
-
-        if (settings && settings.audioMixer != null)
-            settings.LoadAudioLevels();
     }
-    //Audio Controller END
 
     public void CloseProject()
     {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5fb2669bf505a439a62e48d58fcb58, type: 3}
   m_Name: CustomMode
   m_EditorClassIdentifier: 
-  winningScore: 3
+  winningScore: 1
   respawnDelay: 2.000001
   randomTanks: 0
   randomWeapons: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace TankGame
 {
-    public class CustomizeMode : MonoBehaviour
+    public class CustomModeManager : MonoBehaviour
     {
         [SerializeField]
         private ModeProfile modeProfile;
