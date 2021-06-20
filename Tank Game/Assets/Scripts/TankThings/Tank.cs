@@ -1,24 +1,23 @@
 using UnityEngine;
 using TankGame.Profiles;
 using UnityEngine.UI;
-  
+using TankGame.Managers;
+
 namespace TankGame
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Health))]
-    public class Tank : MonoBehaviour
+    public class Tank : MonoBehaviour, IRandomizeAble
     {
         #region Variables
-        [SerializeField]
-        private bool randomize;
+        public bool randomized;
 
         [SerializeField]
         private GameManager gameManager;
 
-        [SerializeField]
-        private TankProfile tProfile;
+        public TankProfile tProfile;
 
         [SerializeField]
         private InputProfile iProfile;
@@ -52,16 +51,21 @@ namespace TankGame
             rb.gravityScale = 0;
         }
 
+        public void randomize()
+        {
+            randomized = true;
+        }
+
         private void OnEnable()
         {
             InvokeRepeating(nameof(CreateTracks), tProfile.trackDelay, tProfile.trackDelay);
 
-            if (randomize || tProfile == null)
+            if (randomized || tProfile == null)
             {
-                tProfile = Randomizer.GetTankProfile();
+                tProfile = ProfilesManager.GetProfile(ProfilesManager.tankProfiles);
                 if (tProfile == null)
                 {
-                    Randomizer.ThrowError(gameObject.name);
+                    ProfilesManager.ThrowError(gameObject.name);
                     return;
                 }
             }
@@ -91,6 +95,7 @@ namespace TankGame
         private void InitializeTank()
         {
             health.maxHealth = tProfile.health;
+            Debug.Log("OBj: " + gameObject.name + " profile is: " + tProfile.name);
             sRend.sprite = tProfile.tankGraphic;
         }
 

@@ -6,9 +6,9 @@ namespace TankGame
     //NOT RESPAWNING CORRECTLY
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Destructible : MonoBehaviour
+    public class Destructible : MonoBehaviour, IRandomizeAble
     {
-        public bool randomize;
+        public bool randomized;
 
         public DestructibleProfile dProfile;
 
@@ -21,6 +21,11 @@ namespace TankGame
 
         private SpriteRenderer sRend;
 
+        public void randomize()
+        {
+            randomized = true;
+        }
+
         private void Awake()
         {
             health = GetComponent<Health>();
@@ -30,12 +35,12 @@ namespace TankGame
         private void OnEnable()
         {
             respawning = false;
-            if (randomize || dProfile == null)
+            if (randomized || dProfile == null)
             {
-                dProfile = Randomizer.GetDestructibleProfile();
+                dProfile = ProfilesManager.GetProfile(ProfilesManager.destrucProfiles);
                 if (dProfile == null)
                 {
-                    Randomizer.ThrowError(gameObject.name);
+                    ProfilesManager.ThrowError(gameObject.name);
                     return;
                 }
             }

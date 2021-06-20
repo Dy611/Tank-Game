@@ -18,21 +18,8 @@ namespace TankGame
         [SerializeField]
         private Toggle randomTanksToggle, randomWeaponsToggle, randomProjectilesToggle, randomDestructiblesToggle;
 
-        public Object[] t;
-        public TankProfile[] tankProfiles;
-        public WeaponProfile[] weaponProfiles;
-        public ProjectileProfile[] projectileProfiles;
-        private static DestructibleProfile[] destrucProfiles;
-
         private void Start()
         {
-            Resources.LoadAll("Profiles", typeof(ScriptableObject));
-
-            tankProfiles = (TankProfile[])Resources.FindObjectsOfTypeAll(typeof(TankProfile));
-            weaponProfiles = (WeaponProfile[])Resources.FindObjectsOfTypeAll(typeof(WeaponProfile));
-            projectileProfiles = (ProjectileProfile[])Resources.FindObjectsOfTypeAll(typeof(ProjectileProfile));
-            destrucProfiles = (DestructibleProfile[])Resources.FindObjectsOfTypeAll(typeof(DestructibleProfile));
-
             winningScoreText.text = modeProfile.winningScore.ToString();
             respawnDelayText.text = modeProfile.respawnDelay.ToString("0.0");
 
@@ -106,72 +93,72 @@ namespace TankGame
 
         public void IncrementPlayer1Tank()
         {
-            modeProfile.player1Tank = Mathf.Clamp(++modeProfile.player1Tank, 0, tankProfiles.Length - 1);
+            modeProfile.player1Tank = Mathf.Clamp(++modeProfile.player1Tank, 0, ProfilesManager.tankProfiles.Length - 1);
             UpdateText(modeProfile.player1Tank + 1, player1TankText);
         }
 
         public void DecrementPlayer1Tank()
         {
-            modeProfile.player1Tank = Mathf.Clamp(--modeProfile.player1Tank, 0, tankProfiles.Length);
+            modeProfile.player1Tank = Mathf.Clamp(--modeProfile.player1Tank, 0, ProfilesManager.tankProfiles.Length);
             UpdateText(modeProfile.player1Tank + 1, player1TankText);
         }
 
         public void IncrementPlayer1Weapon()
         {
-            modeProfile.player1Weapon = Mathf.Clamp(++modeProfile.player1Weapon, 0, weaponProfiles.Length - 1);
+            modeProfile.player1Weapon = Mathf.Clamp(++modeProfile.player1Weapon, 0, ProfilesManager.weaponProfiles.Length - 1);
             UpdateText(modeProfile.player1Weapon + 1, player1WeaponText);
         }
 
         public void DecrementPlayer1Weapon()
         {
-            modeProfile.player1Weapon = Mathf.Clamp(--modeProfile.player1Weapon, 0, weaponProfiles.Length);
+            modeProfile.player1Weapon = Mathf.Clamp(--modeProfile.player1Weapon, 0, ProfilesManager.weaponProfiles.Length);
             UpdateText(modeProfile.player1Weapon + 1, player1WeaponText);
         }
 
         public void IncrementPlayer1Projectile()
         {
-            modeProfile.player1Projectile = Mathf.Clamp(++modeProfile.player1Projectile, 0, projectileProfiles.Length - 1);
+            modeProfile.player1Projectile = Mathf.Clamp(++modeProfile.player1Projectile, 0, ProfilesManager.projectileProfiles.Length - 1);
             UpdateText(modeProfile.player1Projectile + 1, player1ProjText);
         }
 
         public void DecrementPlayer1Projectile()
         {
-            modeProfile.player1Projectile = Mathf.Clamp(--modeProfile.player1Projectile, 0, projectileProfiles.Length);
+            modeProfile.player1Projectile = Mathf.Clamp(--modeProfile.player1Projectile, 0, ProfilesManager.projectileProfiles.Length);
             UpdateText(modeProfile.player1Projectile + 1, player1ProjText);
         }
         public void IncrementPlayer2Tank()
         {
-            modeProfile.player2Tank = Mathf.Clamp(++modeProfile.player2Tank, 0, tankProfiles.Length - 1);
+            modeProfile.player2Tank = Mathf.Clamp(++modeProfile.player2Tank, 0, ProfilesManager.tankProfiles.Length - 1);
             UpdateText(modeProfile.player2Tank + 1, player2TankText);
         }
 
         public void DecrementPlayer2Tank()
         {
-            modeProfile.player2Tank = Mathf.Clamp(--modeProfile.player2Tank, 0, tankProfiles.Length);
+            modeProfile.player2Tank = Mathf.Clamp(--modeProfile.player2Tank, 0, ProfilesManager.tankProfiles.Length);
             UpdateText(modeProfile.player2Tank + 1, player2TankText);
         }
 
         public void IncrementPlayer2Weapon()
         {
-            modeProfile.player2Weapon = Mathf.Clamp(++modeProfile.player2Weapon, 0, weaponProfiles.Length - 1);
+            modeProfile.player2Weapon = Mathf.Clamp(++modeProfile.player2Weapon, 0, ProfilesManager.weaponProfiles.Length - 1);
             UpdateText(modeProfile.player2Weapon + 1, player2WeaponText);
         }
 
         public void DecrementPlayer2Weapon()
         {
-            modeProfile.player2Weapon = Mathf.Clamp(--modeProfile.player2Weapon, 0, weaponProfiles.Length);
+            modeProfile.player2Weapon = Mathf.Clamp(--modeProfile.player2Weapon, 0, ProfilesManager.weaponProfiles.Length);
             UpdateText(modeProfile.player2Weapon + 1, player2WeaponText);
         }
 
         public void IncrementPlayer2Projectile()
         {
-            modeProfile.player2Projectile = Mathf.Clamp(++modeProfile.player2Projectile, 0, projectileProfiles.Length - 1);
+            modeProfile.player2Projectile = Mathf.Clamp(++modeProfile.player2Projectile, 0, ProfilesManager.projectileProfiles.Length - 1);
             UpdateText(modeProfile.player2Projectile + 1, player2ProjText);
         }
 
         public void DecrementPlayer2Projectile()
         {
-            modeProfile.player2Projectile = Mathf.Clamp(--modeProfile.player2Projectile, 0, projectileProfiles.Length);
+            modeProfile.player2Projectile = Mathf.Clamp(--modeProfile.player2Projectile, 0, ProfilesManager.projectileProfiles.Length);
             UpdateText(modeProfile.player2Projectile + 1, player2ProjText);
         }
     } 

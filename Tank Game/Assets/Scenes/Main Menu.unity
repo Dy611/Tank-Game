@@ -1765,7 +1765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &265905860
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,9 +1818,6 @@ MonoBehaviour:
   randomWeaponsToggle: {fileID: 978628545}
   randomProjectilesToggle: {fileID: 737296130}
   randomDestructiblesToggle: {fileID: 1218474667}
-  tankProfiles: []
-  weaponProfiles: []
-  projectileProfiles: []
 --- !u!1 &267659148
 GameObject:
   m_ObjectHideFlags: 0
@@ -11064,7 +11061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1406831011
 Transform:
   m_ObjectHideFlags: 0

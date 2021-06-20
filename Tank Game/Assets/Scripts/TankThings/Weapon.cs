@@ -5,13 +5,14 @@ using TankGame.Profiles;
 namespace TankGame
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Weapon : MonoBehaviour
+    public class Weapon : MonoBehaviour, IRandomizeAble
     {
-        [SerializeField]
-        private bool randomize;
+        public bool randomized;
+        public bool randomizeProj { private get; set; }
 
-        [SerializeField]
-        private WeaponProfile wProfile;
+        public WeaponProfile wProfile;
+        public ProjectileProfile pProfile;
+
         [SerializeField]
         private Transform firePos;
         [SerializeField]
@@ -25,10 +26,20 @@ namespace TankGame
             InitializeWeapon();
         }
 
+        public void randomize()
+        {
+            randomized = true;
+        }
+
         protected virtual void InitializeWeapon()
         {
-            if (randomize)
-                wProfile = Randomizer.GetWeaponProfile();
+            if (randomized)
+                wProfile = ProfilesManager.GetProfile(ProfilesManager.weaponProfiles);
+
+            if (randomizeProj)
+                pProfile = ProfilesManager.GetProfile(ProfilesManager.projectileProfiles);
+            else
+                pProfile = wProfile.pProfile;
 
             barrel.sprite = wProfile.barrelGraphic;
             shootVFX.sprite = wProfile.shotGraphic;
@@ -42,9 +53,9 @@ namespace TankGame
                 proj = ProjectilePool.GetProjectile();
 
                 if (wProfile.randomProjectile)
-                    proj.pProfile = Randomizer.GetProjectileProfile();
+                    proj.pProfile = ProfilesManager.GetProfile(ProfilesManager.projectileProfiles);
                 else
-                    proj.pProfile = wProfile.pProfile;
+                    proj.pProfile = pProfile;
 
                 proj.gameObject.SetActive(true);
                 proj.transform.position = firePos.position;

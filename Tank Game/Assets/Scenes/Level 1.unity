@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -425,8 +425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e02e94c8ad502a4197a0aae8ad1351f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   wProfile: {fileID: 11400000, guid: fd5906862d9886d45a24b2ae058d9aa6, type: 2}
+  pProfile: {fileID: 0}
   firePos: {fileID: 1753665561}
   shootVFX: {fileID: 173356470}
   barrel: {fileID: 52368704}
@@ -618,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -703,49 +704,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &157930920
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157930921}
-  - component: {fileID: 157930922}
-  m_Layer: 0
-  m_Name: Randomizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157930921
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157930920}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 694976469}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &157930922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157930920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d7e81864181e540b185ecb252f6c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &164277452
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -1123,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -1345,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -1610,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -1741,7 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -2066,7 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09ac5bd21732be4aa793b17cd3bf8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 1
+  randomized: 0
   gameManager: {fileID: 694976468}
   tProfile: {fileID: 11400000, guid: efc6eadd3ebb2eb4a930f5fc0641eb26, type: 2}
   iProfile: {fileID: 11400000, guid: f6d1cae371a8e304a9cb46f227c4966b, type: 2}
@@ -5410,7 +5368,6 @@ Transform:
   - {fileID: 699900012}
   - {fileID: 164277453}
   - {fileID: 1537703256}
-  - {fileID: 157930921}
   - {fileID: 2142927423}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -5490,7 +5447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -5635,7 +5592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -5766,7 +5723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -6173,7 +6130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -6379,7 +6336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -6510,7 +6467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -6641,7 +6598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -6853,8 +6810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e02e94c8ad502a4197a0aae8ad1351f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 1
+  randomized: 0
   wProfile: {fileID: 11400000, guid: fd5906862d9886d45a24b2ae058d9aa6, type: 2}
+  pProfile: {fileID: 0}
   firePos: {fileID: 1129382423}
   shootVFX: {fileID: 1102423665}
   barrel: {fileID: 1279602515}
@@ -14961,7 +14919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -15234,7 +15192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09ac5bd21732be4aa793b17cd3bf8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   gameManager: {fileID: 694976468}
   tProfile: {fileID: 11400000, guid: efc6eadd3ebb2eb4a930f5fc0641eb26, type: 2}
   iProfile: {fileID: 11400000, guid: dca5b2fc89181004aad186719fee4d47, type: 2}
@@ -15302,7 +15260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -15742,7 +15700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -15873,7 +15831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -16379,7 +16337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -16510,7 +16468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -16789,7 +16747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -17003,7 +16961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -17134,7 +17092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -17265,7 +17223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e2911fc9a146c409b46968d14f2a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomize: 0
+  randomized: 0
   dProfile: {fileID: 11400000, guid: 19b16927c50b3af46bb663a856da1592, type: 2}
   respawn: 1
   respawning: 0
@@ -17484,5 +17442,5 @@ Transform:
   - {fileID: 1306484995}
   - {fileID: 1278175503}
   m_Father: {fileID: 694976469}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

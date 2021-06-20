@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5fb2669bf505a439a62e48d58fcb58, type: 3}
   m_Name: CustomMode
   m_EditorClassIdentifier: 
-  winningScore: 5
-  respawnDelay: 3
+  winningScore: 3
+  respawnDelay: 2.000001
   randomTanks: 0
   randomWeapons: 0
   randomProjectiles: 0
   randomDestructibles: 0
   player1Tank: 1
-  player1Weapon: 0
+  player1Weapon: 1
   player1Projectile: 0
-  player2Tank: 0
-  player2Weapon: 0
+  player2Tank: 1
+  player2Weapon: 1
   player2Projectile: 0

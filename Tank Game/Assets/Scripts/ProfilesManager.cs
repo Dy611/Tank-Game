@@ -1,21 +1,27 @@
 using UnityEngine;
-using TankGame.Profiles;
 
-namespace TankGame
+namespace TankGame.Profiles
 {
-    public class Randomizer : MonoBehaviour
+    public static class ProfilesManager
     {
-        private static TankProfile[] tankProfiles;
-        private static WeaponProfile[] weaponProfiles;
-        private static ProjectileProfile[] projectileProfiles;
-        private static DestructibleProfile[] destrucProfiles;
+        public static TankProfile[] tankProfiles;
+        public static WeaponProfile[] weaponProfiles;
+        public static ProjectileProfile[] projectileProfiles;
+        public static DestructibleProfile[] destrucProfiles;
 
-        private void Awake()
+        static ProfilesManager()
         {
+            Resources.LoadAll("Profiles", typeof(ScriptableObject));
+
             tankProfiles = (TankProfile[])Resources.FindObjectsOfTypeAll(typeof(TankProfile));
             weaponProfiles = (WeaponProfile[])Resources.FindObjectsOfTypeAll(typeof(WeaponProfile));
             projectileProfiles = (ProjectileProfile[])Resources.FindObjectsOfTypeAll(typeof(ProjectileProfile));
             destrucProfiles = (DestructibleProfile[])Resources.FindObjectsOfTypeAll(typeof(DestructibleProfile));
+        }
+
+        public static T GetProfile<T>(T[] thing) where T : ScriptableObject
+        {
+            return thing[RandomNum(thing.Length)];
         }
 
         public static TankProfile GetTankProfile()
