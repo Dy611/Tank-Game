@@ -1,9 +1,9 @@
-using UnityEngine;
-using System.Collections.Generic;
+using System; 
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
 using TankGame.Profiles;
-using System; 
 
 namespace TankGame.Managers
 {
@@ -58,11 +58,11 @@ namespace TankGame.Managers
                 players[playersGO[i].name].GetComponent<Health>().OnDeath += UpdateScore;
             }
 
-            //Creates A List Of The Player's Tanks For Potential Randomizing
-            List<Tank> tanks = new List<Tank>();
+            //Assigns Tank Components To An Array
+            Tank[] tanks = new Tank[playersGO.Length];
             for (int i = 0; i < playersGO.Length; i++)
             {
-                tanks.Add(playersGO[i].GetComponent<Tank>());
+                tanks[i] = playersGO[i].GetComponent<Tank>();
             }
 
             //Finds All Possible Spawn Positions On The Map
@@ -98,16 +98,17 @@ namespace TankGame.Managers
         /// </summary>
         private void InitializeTanks()
         {
-            Debug.Log("HI");
             //Player 1
+            Weapon weapon = players["Player 1"].GetComponentInChildren<Weapon>();
             players["Player 1"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player1Tank];
-            players["Player 1"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player1Weapon];
-            players["Player 1"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player1Projectile];
+            weapon.wProfile = ProfilesManager.weaponProfiles[modeProfile.player1Weapon];
+            weapon.pProfile = ProfilesManager.projectileProfiles[modeProfile.player1Projectile];
 
             //Player 2
+            weapon = players["Player 2"].GetComponentInChildren<Weapon>();
             players["Player 2"].GetComponent<Tank>().tProfile = ProfilesManager.tankProfiles[modeProfile.player2Tank];
-            players["Player 2"].GetComponentInChildren<Weapon>().wProfile = ProfilesManager.weaponProfiles[modeProfile.player2Weapon];
-            players["Player 2"].GetComponentInChildren<Weapon>().pProfile = ProfilesManager.projectileProfiles[modeProfile.player2Projectile];
+            weapon.wProfile = ProfilesManager.weaponProfiles[modeProfile.player2Weapon];
+            weapon.pProfile = ProfilesManager.projectileProfiles[modeProfile.player2Projectile];
         }
         #endregion Initialization
 
@@ -115,12 +116,6 @@ namespace TankGame.Managers
         private void Randomize<T>(T[] thing) where T : IRandomizeAble
         {
             for (int i = 0; i < thing.Length; i++)
-                thing[i].randomize();
-        }
-
-        private void Randomize<T>(List<T> thing) where T : IRandomizeAble
-        {
-            for (int i = 0; i < thing.Count; i++)
                 thing[i].randomize();
         }
 
@@ -152,45 +147,36 @@ namespace TankGame.Managers
         {
             OnGameOver?.Invoke();
             Time.timeScale = 0;
+
             if (players["Player 1"].activeInHierarchy)
                 winningText.text = players["Player 1"].name + " Wins!";
             else
                 winningText.text = players["Player 2"].name + " Wins!";
+
             winningButton.SetActive(true);
         }
 
         public void SpawnPlayer()
         {
             if (players["Player 1"].activeInHierarchy)
-            {
-                int highestIndex = 0;
-                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player 1"].transform.position);
-                for (int i = 0; i < spawnPositions.Length; i++)
-                {
-                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player 1"].transform.position);
-                    if (currDist > highestDist)
-                    {
-                        highestDist = currDist;
-                        highestIndex = i;
-                    }
-                }
-                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player 2"]));
-            }
+                Respawn(players["Player 1"], players["Player 2"]);
             else if (players["Player 2"].activeInHierarchy)
+                Respawn(players["Player 2"], players["Player 1"]);
+        }
+        private void Respawn(GameObject alivePlayer, GameObject deactivatedPlayer)
+        {
+            int highestIndex = 0;
+            float highestDist = Vector2.Distance(spawnPositions[0].transform.position, alivePlayer.transform.position);
+            for (int i = 0; i < spawnPositions.Length; i++)
             {
-                int highestIndex = 0;
-                float highestDist = Vector2.Distance(spawnPositions[0].transform.position, players["Player 2"].transform.position);
-                for (int i = 0; i < spawnPositions.Length; i++)
+                float currDist = Vector2.Distance(spawnPositions[i].transform.position, alivePlayer.transform.position);
+                if (currDist > highestDist)
                 {
-                    float currDist = Vector2.Distance(spawnPositions[i].transform.position, players["Player 2"].transform.position);
-                    if (currDist > highestDist)
-                    {
-                        highestDist = currDist;
-                        highestIndex = i;
-                    }
+                    highestDist = currDist;
+                    highestIndex = i;
                 }
-                StartCoroutine(DelaySpawn(respawnTime, highestIndex, players["Player 1"]));
             }
+            StartCoroutine(DelaySpawn(respawnTime, highestIndex, deactivatedPlayer));
         }
 
         private IEnumerator DelaySpawn(float timer, int distanceIndex, GameObject player)

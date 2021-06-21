@@ -1,6 +1,6 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using TMPro;
 using TankGame.Menus;
 
 public class MenuManager : MonoBehaviour
